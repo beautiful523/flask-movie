@@ -98,6 +98,30 @@ pip3 install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com fl
 ### 目录，蓝图
 blueprint
 
+### 数据模型
+前台模型：
+
+- 会员表user
+- 会员登录日志userlog
+- 标签表tag
+- 电影表movie
+- 上映预告preview
+- 评论comment
+- 电影收藏moviecol
+后台模型：
+- 权限表auth
+- 角色表role
+- 管理员表admin
+- 管理员登录日志adminlog
+- 操作日志oplog
+
+### 安装flask-sqlalchemy
+pip3 install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com flask-sqlalchemy
+
+### 安装pymysql
+在pycharm的preferences里面的Project Interpreter点击加号搜索PyMySQL,然后点击install package
+### mysql登录
+mysql -uroot -p123456
 
 
 
