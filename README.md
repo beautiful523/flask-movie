@@ -95,6 +95,9 @@
 pip3 install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com flask
 - 或者在pycharm的preferences里面的Project Interpreter点击加号搜索flask,然后点击install package
 
+### 目录，蓝图
+blueprint
+
 
 
 
