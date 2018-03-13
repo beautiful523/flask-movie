@@ -122,9 +122,63 @@ pip3 install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com fla
 在pycharm的preferences里面的Project Interpreter点击加号搜索PyMySQL,然后点击install package
 ### mysql登录
 mysql -uroot -p123456
+### 实战小项目1:文章管理系统
+#### 1.搭建开发环境
+创建项目
+interpreter添加flask
+#### 2.构建项目目录
+#### 3.开发前端模板
+#### 4.设计数据模型
+操作mysql, mariadb和MySQL的操作是一样的
+\s查看当前状态
+若不是则将数据库的字符集改为utf-8
+对比原生语句创建数据表和model的方法创建数据表
+原生的缺点，查询也要原生语句，换数据库会有迁移的问题
+原生修改表字段：
+alter table art modify logo varchar(100) not null;
 
+#### 5.wtforms定义表单
+pip3 install flask-wtf
+#### 6.验证码
+pip3 install -i http://pypi.douban.com/simple --trusted-host pypi.douban.com pillow
+#### 6.编写后端逻辑
+#### 7.测试部署上线
+- 入口：127.0.0.1:8080/login/
+- 数据库：mysql数据库名 artcms
+- 软件如下图
 
+![Aaron Swartz](https://github.com/beautiful523/flask_artcms/blob/master/1520502564892.jpg)
+![avatar](/Users/admin/Documents/1520502564892.jpg)
 
+### 小项目2：flask框架中将csv数据(坐标)在前端展示（地图标注）
+- python读写CSV文件的代码
+<pre><code>
+# coding: utf-8
+import csv<br>
+# 往CSV文件里面写入数据
+    csv\_file = open('csv\_test.csv', 'w')
+    writer = csv.writer(csv\_file)
+    data = [
+        (116.331398, 39.897445),
+        (116.331398, 39.997445)
+    ]
+    writer.writerows(data)
+    csv\_file.close()<br>
+# 从CSV文件里面读取数据
+    result = []
+    with open('csv_test.csv', 'r') as file:
+        reader = csv.reader(file)
+        for line in reader:
+            result.append({'x': line[0], 'y': line[1]})
+    return jsonify(result)<br>
+</code></pre>
+- 将csv文件导入到Excel中打开：
+ - 当在pycharm里面第一次新建CSV文件时，会提示：The file is not associated with any file type.Please define the association:选择file pattern为*.csv，并且选择open matching  file in associated application
+ - 原因：file pattern选择文件全名的话只能识别为普通文件，不能识别为CSV文件，在Excel中不能成功导入。选择open matching file in associated application双击文件可以直接跳转到Excel中打开。
+- Excel中乱码问题：
+mac中的Excel默认编码Unicode。Excel中解决步骤：文件->导入->csv文件->导入->单击文件名->获取数据->确定->文件原始格式选择unicode(原格式)->其他不用设置
+
+### 搭建前台页面
 
 
 
