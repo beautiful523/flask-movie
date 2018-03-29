@@ -181,7 +181,8 @@ mac中的Excel默认编码Unicode。Excel中解决步骤：文件->导入->csv�
 ### 搭建前台页面
 ### 搭建后台页面
 编写admin里的视图函数以后，要从manage.py启动项目，如果run views.py会报错can't import home/admin
-
+### 后台管理
+从referrences安装Flask-WTF
 
 
 
